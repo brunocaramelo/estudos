@@ -1,0 +1,4 @@
+
+clear ; phpunit --bootstrap bootstrap.php test/LeilaoTest --color
+
+clear ; phpunit --bootstrap bootstrap.php test/AvaliadorTest --color

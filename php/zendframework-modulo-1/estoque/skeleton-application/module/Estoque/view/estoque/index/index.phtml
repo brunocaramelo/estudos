@@ -1,0 +1,32 @@
+
+<br />
+<strong>Produtos aqui:</strong>   
+
+<table class='table table-striped' >
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>   
+       <?php foreach( $produtos as $produto ): ?>
+        <tr>
+            <td> <a href="<?php echo $this->url('editar_produto',[ 'id' => $produto->getId()] ); ?>" ><?php echo $produto->getNome(); ?></a> </td>
+            <td><?php echo $produto->getPreco(); ?></td>
+            <td><?php echo $produto->getDescricao(); ?></td>
+            <td><?php echo $produto->getCategoria()->getNome(); ?></td>
+        <td><a href="<?php echo $this->url('confirmar_remover_produto',[ 'id' => $produto->getId()] ); ?>" class='btn btn-danger' >Remover</a> </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+
+</table>
+
+
+<?php echo $this->paginationPadraoHelper( $produtos , $qtd_pagina , '/produtos' )->render();?>
+

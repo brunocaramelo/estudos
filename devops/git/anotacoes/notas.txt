@@ -1,0 +1,155 @@
+Criando repositorio local
+
+	- dentro do diretorio desejado, execute (adicionara um .git)
+			-git init 
+		
+
+
+-adicionando usuario (global e opcional) se nao passar ele serve apaenas o repositorio corrente
+ 
+	- nome com 
+		- git config --global user.name ='Bruno Caramelo'
+
+	- email com 
+		- git config --global user.email ='bruno.caramelo5@gmail.com'
+
+
+-acoes de commit e status
+
+	- checando status com 
+			- git status
+	
+	- adicionando arquivo com 
+			- git add index.html
+		- commitando com 
+			- git commit
+
+	- vendo alteracoes detalhadas
+		- git whatchanged
+
+- repositorio remoto
+
+	- criando um novo diretorio
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin https://github.com/brunocaramelo/repotest.git
+	git push -u origin master
+
+	acima estamos iniciando o  git no diretorio local, importando o remoto e com push enviando os dados onde criamos um master no caso
+
+- clonando repositorio
+	- git clone https://github.com/brunocaramelo/repotest.git
+
+- Verificando branches
+	- git branche 
+	
+- Criando branches
+	- git branche b0.0.1
+
+* com retorno Switched to branch 'b0.0.1'
+
+- Fazendo Switch
+ 	- git checkout b0.0.1
+
+- Enviando branch ao github
+	- git push -u origin b0.0.1
+
+- Atualizando branch remota
+	- git pull
+
+- Recuperando branch remota
+	- git branch -t b0.0.1 origin/b0.0.1
+
+- Verificação de brachs criadas remotamente
+	- git fetch origin
+
+
+- Checkout de branch ja criando
+	- git checkout -b b0.1.0
+
+- Recuperando dados com o uso de merge
+	- git merge b0.1.0
+
+- Atualizando uma branch com base em outra (parametros : a base o segundo o target)
+
+	- git rebase master b0.1.0
+
+- Atualizando uma branch com base em outra (parametros : a base o segundo o target) e caso de conflito
+
+	- git rebase master b0.1.0 --continue
+
+- Realizando reset mesmo depois do comando add (ultima versao no repositorio) sem commit (retira apenas o commit , nao muda o arquivo local)
+	- git reset HEAD index.html
+	
+- Realizando reset mesmo depois commit (assinatura de commit no parametro) (retira apenas o commit , nao muda o arquivo local)
+	- git reset 97a053b0ab9c42520352d3394702deb82d29124c index.html
+	
+- Realizando o revert
+
+	- git revert 97a053b0ab9c42520352d3394702deb82d29124c
+	
+- Colocando local temporario
+	- git stash
+
+- Retomando local temporario
+	- git stash copy
+	- git stash apply stash@{0}
+	
+- Removendo local temporario
+	- git stash drop
+	
+- Ferramenta de Debug (GIT Bisect)
+
+https://git-scm.com/book/pt-br/v1/Ferramentas-do-Git-Depurando-com-Git
+https://imasters.com.br/artigo/24741/desenvolvimento/dica-git-da-semana-git-bisect/
+	
+	
+-Criando comandos alias
+	- vim ~/.gitconfig
+	e adicionar ao final por exemplo
+	
+	[user]
+	name = =Bruno Caramelo
+	email = =bruno.caramelo5@gmail.com
+[alias]
+	st = status
+	co = checkout
+	enviaparalocal = checkout master && pull && checkout desenvolvimento && rebase master
+	
+	
+-Customizando o LOG
+	https://coderwall.com/p/euwpig/a-better-git-log
+	- git log -p (ultra detalhado)
+	- git log --graph (mostra o desenho de um caminho)
+	
+- Fork de repositorio
+	- que é a criação de uma copia no usuario de outra pessoa
+	https://tableless.com.br/contribuindo-em-projetos-open-source-com-o-github/
+	
+- Pull request
+	- aviso de commit no github para avisar integrantes
+
+- Para repositorios opensource no caso com um fork
+	- adicionar um remote do repositorio original tambem para ter alterções do projeto original ao receber o pull
+
+
+- Visualizando commit remoto (verifica a diference sem fazer checkout local)
+	- git fetch mmsoares (apelido do remote)
+	- git diff mmsoares/master
+	
+	depois aceitamos com:
+	- git merge mmsoares/master
+	
+	depois o git push
+	
+	
+	
+	
+- Cherry pick
+	https://imasters.com.br/artigo/24442/desenvolvimento/dica-git-da-semana-cherry-picking/?trace=1519021197&source=single
+	
+
+
+
+

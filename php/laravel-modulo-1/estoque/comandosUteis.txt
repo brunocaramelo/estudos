@@ -1,0 +1,43 @@
+Criando projeto
+
+composer create-project laravel/laravel estoque 
+
+namespace do projeto
+
+php artisan app:name estoque
+
+Modulo de autenticacao compativel com a versao nova
+
+php artisan make:auth
+
+
+Publicar 
+
+php artisan vendor:publish
+
+
+Migrations
+
+criando uma deixa com o nome claro
+
+php artisan make:migration adiciona_tamanho_no_produto
+
+executar todas as migrations do diretorio
+
+database/Migrations
+
+php artisan migrate
+
+se der ruim, voltar
+
+php artisan migrate:rollback
+
+
+Criando classe de requests (form)
+
+php artisan make:request ProdutoRequests
+
+
+Criando Seeders (dados Pre definidos no banco) da classe estoque/database/seeds
+
+ php artisan db:seed

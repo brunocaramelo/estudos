@@ -1,0 +1,61 @@
+Tar.gz
+	- descompactar : tar zxf arquivo.tar.gz
+	- compactar : tar -czvf arquivo.tar.gz pasta
+
+
+Kill,ps ,grep
+
+-comando kill 
+	- kill 1111 -> numero do processo
+	- kill : mata o processo , mas da uma chance de ele ser encerrado
+	- kill -9 : ele nao da chance para o processo ser encerrado (nao e nada aconselhado)
+	- killall : mata atraves de um nome como killall pluma, aceita o -9 tambem
+
+- comando ps 
+ - ps -es, dados abaixo 
+	-  UID   PID          PENDING          BLOCKED          IGNORED           CAUGHT STAT TTY        TIME COMMAND
+- ps -ef 
+	- redireciona a saida para um programa como o exemplo: ps -ef | grep firefox que recupera a saida e executa um grep de firefox como filtro
+
+- pstree
+	- lista processos em arvore (subprocessos)
+	- aceita usuario de parametro como: pstree bcaramelo
+
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+jobs, bg,fg,pstree, &
+
+- processos
+	- digitando o nome do programa, trava o terminal pois esta usando ele para se manter
+	-  CTRL + C , finaliza o processo
+	-  CTRL + Z , congela o processo exemplo: [1]+  Parado                  leafpad
+- comando jobs	
+	- Checando processo parado: jobs , com saida: [1]+  Parado                  leafpad
+- comando bg
+	- subimos novamente com o comando bg 1 (numero do processo) ao background
+ - comando fg
+	- subimos novamente com o comando fg 1 (numero do processo) ao foreground (trava o bash)
+- rodando no background na primeira vez
+	- subimos sem escrever bg com o caracter & ao final do programa como: leafpad &
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Variaveis de ambiente
+	- Tornar um executavel qualquer em global sem colocar o mesmo em /usr/bin
+		- digitar env para ver as variaveis globais do sistema
+		- colocar : PATH=$PATH:/home/bcaramelo/executaveis (apenas a sessao deste nasj)
+	- Em todas as secoes do bash, devemos dentro do home do usuario , editar o arquivo .bashrc e adicionar a linha acima
+
+ Instalando compilado
+	- executar ./configure para ver se tem dependencia faltando
+	- executar make
+	- executar make install
+
+
+Acesso remoto com ssh e scp
+	- curiosiadade ssh -X (ambiente grafico)
+	- conexao remota ssh jose@192.168.2.117
+	- transferencia remota scp -r work.zip jose@localhost:/media/Dados/targetFolder
+
+

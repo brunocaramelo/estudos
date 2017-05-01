@@ -1,0 +1,17 @@
+COMPOSER
+    1 - criar projeto (skeleton) / entrar no diretorio onde quer a instalacao
+
+    composer create-project --stability='dev' zendframework/skeleton-application
+
+    2 - colocando dependencia do zftool: so funciona no ZF2
+    
+    composer require zendframework/zftool:dev-master
+
+    - ZF3 -> seguir procedimento
+    
+    https://olegkrivtsov.github.io/using-zend-framework-3-book/html/en/Creating_a_New_Module/How_to_Create_a_New_Module_.html
+
+
+    email composer
+
+        composer require zendframework/zend-math:dev-master

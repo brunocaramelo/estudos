@@ -1,0 +1,30 @@
+Tem certeza que quer Remover o Produto Abaixo??
+
+<form action='' method='post'>
+
+<table class='table table-striped' >
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Descrição</th>
+        </tr>
+    </thead>
+
+    <tbody> 
+        <tr>
+            <td><?php echo $produto->getNome(); ?></td>
+            <td><?php echo $produto->getPreco(); ?></td>
+            <td><?php echo $produto->getDescricao(); ?></td>
+        </tr>
+    </tbody>
+</table>
+
+<input type='hidden' name='id' value="<?php echo $produto->getId(); ?>"  />
+
+<div class ='form-group'>
+    <input type='submit' value='Sim' class='btn btn-danger' />
+    <a href='<?php echo $this->url('home') ?>'  class='btn btn-primary'>Não</a>
+</div>
+   
+</form>

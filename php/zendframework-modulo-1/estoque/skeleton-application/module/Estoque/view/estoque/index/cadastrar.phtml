@@ -1,0 +1,45 @@
+<strong>Produto cadastrar aqui:</strong>
+<?php
+    $this->form()->openTag($form);
+?>
+<form action='/cadastrar' method='post' >
+    
+    <div class ='form-group'>
+       <?php
+              echo $this->formLabel($form->get('nome'));
+              echo $this->formInput($form->get('nome'));
+              echo $this->formElementErrors()->render( $form->get( 'nome' ) );
+         ?>
+    </div>
+    
+    <div class ='form-group'>
+        <?php
+              echo $this->formLabel($form->get('preco'));
+              echo $this->formInput($form->get('preco'));
+              echo $this->formElementErrors()->render($form->get('preco'));
+         ?>
+    </div>
+    
+    <div class ='form-group'>
+        <?php
+              echo $this->formLabel($form->get('categoria'));
+              echo $this->formSelect($form->get('categoria'));
+              echo $this->formElementErrors()->render($form->get('categoria'));
+         ?>
+    </div>
+    
+    <div class ='form-group'>
+       <?php
+              echo $this->formLabel($form->get('descricao'));
+              echo $this->formInput($form->get('descricao'));
+              echo $this->formElementErrors()->render($form->get('descricao'));
+              
+              echo $this->formRow($form->get('csrf'));
+         ?>
+    </div>
+   
+    <div class ='form-group'>
+        <input type='submit' value='Salvar' class='btn btn-primary' />
+    </div>
+   
+</form>
