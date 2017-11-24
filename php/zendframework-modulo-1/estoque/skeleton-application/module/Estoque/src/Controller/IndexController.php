@@ -164,8 +164,8 @@ class IndexController extends AbstractActionController{
                     'port' => 465,
                     'connection_class' => 'login',
                     'connection_config' => [
-                        'username' => 'bruno.caramelo5@gmail.com',
-                        'password' => 'brunocaramelo321',
+                        'username' => '***@gmail.com',
+                        'password' => '*********',
                         'ssl' => 'ssl'
                         ] 
                     ];
