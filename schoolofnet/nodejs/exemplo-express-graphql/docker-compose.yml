@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  nodejs: #name of your service
+    container_name: nodejs_graphql
+    build: # specify the directory of the Dockerfile
+      dockerfile: ./docker/node/Dockerfile
+      context: ./
+    ports:
+      - "3000:3000" #specify ports forwarding
+    links:
+      - database # link this service to the database service
+    volumes:
+      - ./src/:/usr/src/app
+      - ./package.json:/usr/src/app/package.json
+      - ./process.json:/usr/src/app/process.json
+    depends_on:
+      - database
+      
+  database: # name of the service
+    image: mongo # specify image to build container from
+    container_name: mongo_graphql
