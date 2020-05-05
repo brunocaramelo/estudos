@@ -3,7 +3,6 @@ import {
     GraphQLID,
     GraphQLString
 } from 'graphql';
-
 /*
 `type Person {
     id: ID,
