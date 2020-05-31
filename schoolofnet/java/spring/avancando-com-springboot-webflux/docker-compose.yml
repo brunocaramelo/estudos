@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services: 
   docker-mysql:
@@ -13,7 +13,8 @@ services:
       - MYSQL_PASSWORD=root
   spring-boot-jpa-docker-webapp:
     build:
-      context: ./docker/app
+      context: .
+      dockerfile: ./docker/app/Dockerfile
     image: sudhakiran/gradle-springboot
     container_name: app-spring-boot
     depends_on:
